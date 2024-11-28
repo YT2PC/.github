@@ -1,7 +1,7 @@
 # YT2PC (YouTube to Podcast)
 
 `yt2pc` is a program that allows you to subscribe to a YouTube playlist as if it were a podcast. It takes care of everything, from listing the episodes to downloading the audio and converting it into a standard format that any device can play.
-- [YT2PC](https://yt2pc.com) 
+- <a href="https://yt2pc.com" target="_blank" rel="noopener noreferrer">YT2PC</a>
 ## Requirements
 
 - A YouTube API Key. Can be obtained from the Google Developers Console.
