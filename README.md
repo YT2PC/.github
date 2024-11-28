@@ -1,7 +1,7 @@
 # YT2PC (YouTube to Podcast)
 
 `yt2pc` is a program that allows you to subscribe to a YouTube playlist as if it were a podcast. It takes care of everything, from listing the episodes to downloading the audio and converting it into a standard format that any device can play.
-- [YT2PC Demo](https://yt2pc.com) 
+- [YT2PC](https://yt2pc.com) 
 ## Requirements
 
 - A YouTube API Key. Can be obtained from the Google Developers Console.
@@ -22,7 +22,7 @@ services:
       - "./audio_cache:/audio_cache"
     environment:
       YOUTUBE_API_KEY: "YOUR_API_KEY_HERE"
-      SERVER_URL: "https://your.server.url.here"
+      SERVER_URL: "https://yt2pc.com"
       PORT: "8080" # Optional. Default is 8080
       
       # If you want to filter the videos using a regex, define it here:
@@ -40,7 +40,7 @@ services:
 
 ### Docker-compose (self-built)
 
-1. Clone the repo: `git clone https://github.com/cquintana92/yt2pc`.
+1. Clone the repo: `git clone https://github.com/yt2pc`.
 2. Set up the following docker-compose file:
 
 ```yaml
@@ -53,7 +53,7 @@ services:
       - "./audio_cache:/audio_cache"
     environment:
       YOUTUBE_API_KEY: "YOUR_API_KEY_HERE"
-      SERVER_URL: "https://your.server.url.here"
+      SERVER_URL: "https://yt2pc.com"
       PORT: "8080" # Optional. Default is 8080
       
       # If you want to filter the videos using a regex, define it here:
@@ -82,7 +82,7 @@ The server will listen to incoming connections at the port you specified. In ord
 In order to get the list of episodes, you can enter an URL like the following into your podcast client:
 
 ```
-https://your.server.url.here/PLAYLIST_ID.xml
+https://yt2pc.com/youtube-video-downloader
 ```
 
 The `PLAYLIST_ID` is the final part of a playlist URL. That means, if the playlist URL is `https://www.youtube.com/playlist?list=ABCDEFG`, you would need to use `ABCDEFG` as the `PLAYLIST_ID`.
@@ -94,7 +94,7 @@ Keep in mind that when you ask it to download an episode, it may take a while th
 For reference, the URL for downloading an episode is:
 
 ```
-https://your.server.here/PLAYLIST_ID/VIDEO_ID
+https://yt2pc.com/youtube-video-downloader
 ```
 
 > **NOTE**: The fetching for the playlist videos is cached for 2 hours, so if you re-request the list of episodes from a playlist within that time range, it won't actually fetch it from YouTube. It's an in-memory cache, so if you restart the server it will be evicted.
@@ -104,7 +104,7 @@ https://your.server.here/PLAYLIST_ID/VIDEO_ID
 If you want to set up a healthcheck you can use the following URL: 
 
 ```shell
-$ curl https://your.server.here/health
+$ curl https://yt2pc.com/youtube-video-downloader
 ```
 
 If you receive an OK response, it means the server is running.
